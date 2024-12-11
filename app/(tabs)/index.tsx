@@ -1,70 +1,69 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
+ import { Link } from 'expo-router'; 
+ import FadeInView from '@/components/fadeInView';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+export default function Index() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ScrollView>
+    <View style={styles.container}>
+      <Image style={styles.image} source={require("../../assets/images/statsImg.jpg")} />
+     
+          <FadeInView style={styles.buttonDeco}>
+              <Text style={styles.linkText}><Link href="/measuresOfCentralTendencyRaw">Mean, Mode, Median (Raw)</Link></Text>
+          </FadeInView>
+          <FadeInView style={styles.buttonDeco}>
+              <Text style={styles.linkText}><Link href="/measuresOfCentralTendencyTabulated">Mean, Mode, Median (Table)</Link></Text>
+          </FadeInView>
+          <FadeInView style={styles.buttonDeco}>
+              <Text style={styles.linkText}><Link href="/measuresOfCentralTendencyGrouped">Mean, Mode, Median (Grouped)</Link></Text>
+          </FadeInView>
+          <FadeInView style={styles.buttonDeco}>
+              <Text style={styles.linkText}><Link href="/measuresOfDispersionUngrouped">Dispersion (UnGrouped)</Link></Text>
+          </FadeInView>
+          <FadeInView style={styles.buttonDeco}>
+              <Text style={styles.linkText}><Link href="/measuresOfDispersionGrouped">Dispersion (Grouped)</Link></Text>
+          </FadeInView>
+    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
+    
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  text: {
+    color: '#fff',
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  linkText: {
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: '900'
+  },
+  image: {
+    // width: 320,
+    width:"100%",
+    height: 440,
+    //borderRadius: 18,
+    //borderWidth: 2,
+   //borderColor: 'white',
+    marginVertical: 20
+  },
+  buttonDeco : {
+    backgroundColor: "grey",
+    borderWidth: 2,
+    borderColor: "white",
+    marginBottom: 15,
+    width: "90%",
+    borderRadius: 10,
+    padding: 10,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 16
   },
 });
