@@ -15,7 +15,8 @@ const MeasuresOfCentralTendencyUngroupedRaw = () => {
       .split(",")
       .map((num) => parseFloat(num.trim()))
       .filter((num) => !isNaN(num));
-    if (numbers.length === 0) {
+    
+      if (numbers.length === 0) {
       setInvalidInput("Invalid input");
       return;
     }
