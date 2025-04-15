@@ -8,9 +8,9 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/five-stats.png",
+      "image": "./assets/images/five-stats-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0000ff"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "buildNumber": "1.0.0",
@@ -24,7 +24,7 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/five-stats.png",
-        "backgroundColor": "#0000ff"
+        "backgroundColor": "#ffffff"
       },
       "package": "com.chichiboyhere.FiveStats"
     },
