@@ -4,11 +4,11 @@
     "slug": "FiveStats",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/five-stats.png",
+    "icon": "./assets/images/fiveStats_icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/five-stats-splash.png",
+      "image": "./assets/images/fiveStats_icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,7 +23,7 @@
     "android": {
       "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/five-stats.png",
+        "foregroundImage": "./assets/images/fiveStats_icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.chichiboyhere.FiveStats"
